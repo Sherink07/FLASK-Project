@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="grid">
+        {% for p in products %}
+            <h1>{{ p.name }}</h1>
+            <p>{{ p.Price | round(2) }}</p>
+            {% if p.Price < 500 %}
+                <p>Sale</p>
+            {% endif %}
+
+            {% if p.Stock > 0 %}
+            <button>Add to cart</button>
+            {% else %}
+            <p> Out of Stock </p>
+                <p>Sale</p>
+                {% endif %}
+            {% endfor %}
+    </div>
+</body>
+</html>
